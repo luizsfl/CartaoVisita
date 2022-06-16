@@ -5,7 +5,7 @@
     <string name="label_nome">Informe o nome</string>
     <string name="label_tel">Telefone</string>
     <string name="label_empresa">empresa</string>
-    <string name="label_cor">cor</string>
+    <string name="label_cor">Selecione a cor</string>
     <string name="label_email">Email</string>
     <string name="label_confirmar">Confirmar</string>
     <string name="label_add_visita_card">Adicionado</string>

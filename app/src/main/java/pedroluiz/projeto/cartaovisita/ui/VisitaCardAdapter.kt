@@ -22,15 +22,14 @@ class VisitaCardAdapter: androidx.recyclerview.widget.ListAdapter<VisitaCard,Vis
         private val binding: ItemVisitaCardBinding
     ):RecyclerView.ViewHolder(binding.root){
         fun bind(item:VisitaCard){
-            binding.tvNome.text = item.nome
-            binding.tvTelefone.text = item.telefone
-            binding.tvEmail.text = item.email
-            binding.tvEmpresa.text =item.empresa
+            binding.tvNome.text = "Nome: " +item.nome
+            binding.tvTelefone.text = "Telefone: "+item.telefone
+            binding.tvEmail.text = "Email: "+item.email
+            binding.tvEmpresa.text ="Empresa: "+item.empresa
 
             if (item.fundoPersonalizado.isNotEmpty()) {
                 binding.mcvContent.setBackgroundColor(
-                  //  Color.parseColor((item.fundoPersonalizado))
-                    Color.parseColor(("#00FF80"))
+                    Color.parseColor((item.fundoPersonalizado))
                 )
             }
 
