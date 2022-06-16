@@ -21,7 +21,7 @@ import pedroluiz.projeto.cartaovisita.databinding.ActivityAddCardVisitaBinding
 class AddCardVisita : AppCompatActivity() {
 
     private val binding by lazy { ActivityAddCardVisitaBinding.inflate(layoutInflater) }
-
+    private var corSelecionada = ""
     private val mainViewModel: MainViewModel by viewModels {
         MainViewModelFactory((application as App).repository)
     }
@@ -58,7 +58,7 @@ class AddCardVisita : AppCompatActivity() {
                     empresa = empresa,
                     telefone = binding.tilTelefone.editText?.text.toString(),
                     email = binding.tilEmail.editText?.text.toString(),
-                    fundoPersonalizado = binding.btCor.text.toString(),
+                    fundoPersonalizado = corSelecionada,
                 )
                 mainViewModel.insert(visitaCard)
                 Toast.makeText(this, getString(R.string.label_add_visita_card), Toast.LENGTH_SHORT)
@@ -80,14 +80,13 @@ class AddCardVisita : AppCompatActivity() {
         val nameCores = arrayOf(
             "Vermelho",
             "Rosa",
-            "Rocho",
+            "Roxo",
             "Azul",
             "Verde",
             "Amarelo",
             "Laranja",
-            "Maron",
+            "Marrom",
             "Cinza",
-            "Preto"
         )
 
         builder.setTitle("Selecione uma cor")
@@ -96,6 +95,7 @@ class AddCardVisita : AppCompatActivity() {
 
                 binding.btCor.setText(nameCores[which])
                 binding.btCor.setBackgroundColor(Color.parseColor((allColors[which])))
+                corSelecionada = allColors[which]
             })
 
         return builder.create()
