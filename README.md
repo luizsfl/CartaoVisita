@@ -1,6 +1,6 @@
 # CartãoVisita
 
-Para desenvolvimento do aplicativo foi utilizado a arquitetura MVVM, o room data base para salvar os dados no celular, criado um SwiperRefresh para informar o usuário que os dados estao sendo carregados.
+Para desenvolvimento do aplicativo foi utilizado a arquitetura MVVM, o room data base para salvar os dados no celular, criado um SwiperRefresh para informar o usuário que os dados estão sendo carregados.
 
 
 
