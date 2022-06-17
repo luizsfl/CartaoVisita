@@ -77,17 +77,7 @@ class AddCardVisita : AppCompatActivity() {
     fun onCreateDialog(): Dialog? {
 
         val builder: AlertDialog.Builder = AlertDialog.Builder(this)
-        val nameCores = arrayOf(
-            "Vermelho",
-            "Rosa",
-            "Roxo",
-            "Azul",
-            "Verde",
-            "Amarelo",
-            "Laranja",
-            "Marrom",
-            "Cinza",
-        )
+        val nameCores = arrayOf("Vermelho","Rosa","Roxo","Azul","Verde","Amarelo","Laranja","Marrom","Cinza")
 
         builder.setTitle("Selecione uma cor")
             .setItems(nameCores, DialogInterface.OnClickListener { dialog, which ->
