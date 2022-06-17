@@ -3,13 +3,15 @@ package pedroluiz.projeto.cartaovisita.ui
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import androidx.activity.viewModels
-import androidx.lifecycle.Observer
+import androidx.appcompat.widget.SearchView
 import pedroluiz.projeto.cartaovisita.App
+import pedroluiz.projeto.cartaovisita.R
 import pedroluiz.projeto.cartaovisita.databinding.ActivityMainBinding
 import pedroluiz.projeto.cartaovisita.util.Image
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
     private val adapter by lazy {   VisitaCardAdapter() }
 
@@ -41,6 +43,27 @@ class MainActivity : AppCompatActivity() {
         mainViewModel.getAll().observe(this, { visitaCard->
             adapter.submitList(visitaCard)
         })
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.menu_pesquisa,menu)
+        val searchMenu = menu.findItem(R.id.action_search).actionView as SearchView
+        searchMenu.setOnQueryTextListener(this)
+        return super.onPrepareOptionsMenu(menu)
+    }
+
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        return false
+    }
+
+    override fun onQueryTextChange(newText: String?): Boolean {
+        if (newText!=null) {
+            mainViewModel.searchName("%"+newText+"%").observe(this,{ cards->
+                adapter.submitList(cards)
+            })
+        }
+
+        return false
     }
 }
 

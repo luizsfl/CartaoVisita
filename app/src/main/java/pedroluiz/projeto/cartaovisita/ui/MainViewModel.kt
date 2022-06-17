@@ -15,6 +15,8 @@ class MainViewModel(private val visitaCardRepository: VisitaCardRepository): Vie
 
     fun getAll():LiveData<List<VisitaCard>> = visitaCardRepository.getAll()
 
+    fun searchName(searchName :String):LiveData<List<VisitaCard>> = visitaCardRepository.searchName(searchName)
+
 
 }
 

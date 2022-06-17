@@ -16,4 +16,6 @@ class VisitaCardRepository(private val dao: VisitaCardDao){
 
     fun getAll() = dao.getAll()
 
+    fun searchName(searchName :String) = dao.searchName(searchName)
+
 }

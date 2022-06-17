@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Pedro Luiz/AndroidStudioProjects2/CartaoVisita/app/src/main/res/drawable/ic_add.xml" value="0.123" />
+        <entry key="..\:/Users/Pedro Luiz/AndroidStudioProjects2/CartaoVisita/app/src/main/res/drawable/ic_search.xml" value="0.1" />
         <entry key="..\:/Users/Pedro Luiz/AndroidStudioProjects2/CartaoVisita/app/src/main/res/layout/activity_add_card_visita.xml" value="0.16" />
         <entry key="..\:/Users/Pedro Luiz/AndroidStudioProjects2/CartaoVisita/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/Pedro Luiz/AndroidStudioProjects2/CartaoVisita/app/src/main/res/layout/item_visita_card.xml" value="0.1" />
+        <entry key="..\:/Users/Pedro Luiz/AndroidStudioProjects2/CartaoVisita/app/src/main/res/menu/menu_pesquisa.xml" value="0.1" />
       </map>
     </option>
   </component>

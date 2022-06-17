@@ -11,6 +11,9 @@ interface VisitaCardDao {
     @Query("SELECT * FROM visitacard")
     fun getAll(): LiveData<List<VisitaCard>>
 
+    @Query("SELECT * FROM visitacard where nome like :search")
+    fun searchName(search :String): LiveData<List<VisitaCard>>
+
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(VisitaCard : VisitaCard)
 
