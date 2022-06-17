@@ -37,6 +37,13 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         adapter.listenerShare = { card ->
             Image.share(this@MainActivity,card)
         }
+
+        binding.srlCards.setOnRefreshListener {
+            mainViewModel.getAll().observe(this, { visitaCard->
+                adapter.submitList(visitaCard)
+                binding.srlCards.isRefreshing = false
+            })
+        }
     }
 
     private fun getAllVisitaCard(){
